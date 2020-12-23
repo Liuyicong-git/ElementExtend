@@ -1,8 +1,8 @@
 {
   "name": "element-extend-l",
-  "version": "1.0.35",
+  "version": "1.0.8",
   "private": false,
-  "description":"文档组件更新",
+  "description": "加入search-pop及文档",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,12 +12,17 @@
     "lib": "vue-cli-service build --target lib --name element-extend --dest lib packages/index.js"
   },
   "main": "lib/element-extend.umd.min",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Liuyicong-git/ElementExtend"
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.14.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@popperjs/core": "^2.6.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",

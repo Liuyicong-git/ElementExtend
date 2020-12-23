@@ -41,6 +41,21 @@ Vue.use(DropSelect);
 
 组件下拉悬着是基于ElementUI el-select 二次开发其它属性DropSelect也继承，[请参考el-select](https://element.eleme.io/#/zh-CN/component/select).
 
+//TODO events API
+
+## SearchPop
+
+SearchPop  主要为input或者 其他输入查询数据展示提供优化。
+
+### SearchPop Attributes 
+
+| 参数        | 说明                                                  | 类型    | 可选值 | 默认值 |
+| ----------- | ----------------------------------------------------- | ------- | ------ | ------ |
+| show        | pop显示与隐藏控制                                     | boolean |        | false  |
+| loading     | 加在状态，通常在存在异步请求下设置此值                | boolean |        | false  |
+| mountedFlag | 需要挂在的目标id的方式为 '#id' , '.class'，此项为必填 | string  |        |        |
+| tipClass    | 自定义pop class                                       | string  |        |        |
+
 
 
 

@@ -1,14 +1,8 @@
 <template>
   <div class="test-box">
-    <!-- <h3> IWOS 连级 下拉 </h3>
-    <drop-select :dropMenus="dropMenus" dropLabelClass="drop-label" placeholder="请选择数据" value-key="value1"
-      label-key="label1" ref="dropInput" @changeDrop="getDropInfo" @change="getValue" type="select" />
-    <h3> 连级时间下拉框</h3>
-    <drop-select :dropMenus="dropMenus" dropLabelClass="drop-label" placeholder="请选择数据" @change="getValue"
-      type="datepick" /> -->
     <h3> IWOS table 查询 </h3>
     <el-input id="test" v-model="searchInput" @input="changeSearch" />
-    <search-pop mountedFlag="#test" :loading="loading" :show="showTool">
+    <search-pop flag="#test" :loading="loading" :show="showTool">
       <div style="padding:15px">
         <el-table :data="tableData" border style="width: 100%" @row-click="rowClick">
           <el-table-column prop="date" label="日期" width="180" />
@@ -17,14 +11,11 @@
         </el-table>
       </div>
     </search-pop>
-    <!-- <h3>IWOS 滚动</h3>
-    <card-swiper></card-swiper> -->
   </div>
 
 </template>
 
 <script>
-import { searchPopTableData } from "./test.js";
 export default {
   data() {
     return {
@@ -37,22 +28,6 @@ export default {
     };
   },
   methods: {
-    // drop-select
-
-    // getDropInfo(val) {
-    //   console.log(val);
-    //   this.loading = true;
-    //   setTimeout(() => {
-    //     this.$refs.dropInput.setSelectOptions(dropSelectOptions);
-    //     this.loading = false;
-    //   }, 1000);
-    // },
-    // getValue(val) {
-    //   console.log(val);
-    // },
-
-    // searchTable
-
     changeSearch(val) {
       if (val == "21") {
         this.showTool = true;
@@ -70,11 +45,6 @@ export default {
       this.showTool = false;
     },
   },
-  // mounted() {
-  //   this.$nextTick(() => {
-  //     this.$refs.dropInput.initData();
-  //   });
-  // },
 };
 </script>
 <style lang="scss" scoped>

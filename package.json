@@ -1,17 +1,16 @@
 {
-  "name": "element-extend-l",
-  "version": "1.0.8",
+  "name": "element-expand",
+  "version": "1.0.3",
   "private": false,
-  "description": "加入search-pop及文档",
+  "description": "codepen 无法支持大小写修改",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "babel packages/index.js --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lib": "vue-cli-service build --target lib --name element-extend --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name ElementExpand  --dest lib packages/index.js"
   },
-  "main": "lib/element-extend.umd.min",
+  "main": "lib/ElementExpand.common.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Liuyicong-git/ElementExtend"

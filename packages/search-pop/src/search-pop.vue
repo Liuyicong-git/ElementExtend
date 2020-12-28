@@ -39,11 +39,12 @@ export default {
     },
   },
   mounted() {
-    if (!this.$attrs.mountedFlag) {
-      console.log("wargin: search-table 未挂载对象，请设置mountedFlag");
+    console.log(this.$attrs);
+    if (!this.$attrs.flag) {
+      console.log("wargin: search-table flag");
       return;
     }
-    let searchDom = document.querySelector(this.$attrs.mountedFlag);
+    let searchDom = document.querySelector(this.$attrs.flag);
     let searchContent = document.getElementById(this.instanceSequnce);
     createPopper(searchDom, searchContent, {
       placement: "bottom-start",

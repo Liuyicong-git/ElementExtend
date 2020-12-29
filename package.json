@@ -2,7 +2,7 @@
   "name": "element-expand",
   "version": "1.0.54",
   "private": false,
-  "description": "改dropSelect $attrs 为props 兼容codepen 2. 改dropmenus小写",
+  "description": "改dropSelect $attrs 为props 兼容codepen 2. 改dropmenus小写 3 兼容双向绑定流入",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",

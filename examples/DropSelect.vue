@@ -17,7 +17,7 @@ export default {
     return {
       loading: false,
       showTool: false,
-      value: "",
+      value: "选项14",
       tableData: [],
       dropMenus: dropMenus,
     };
@@ -37,10 +37,7 @@ export default {
     },
   },
   mounted() {
-    this.$nextTick(() => {
-      this.$refs.dropInput.initData();
-      this.$refs.dropPicker.initData();
-    });
+    this.$refs.dropInput.setSelectOptions(dropSelectOptions);
   },
 };
 </script>

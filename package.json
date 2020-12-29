@@ -1,6 +1,6 @@
 {
   "name": "element-expand",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "private": false,
   "description": "改dropSelect $attrs 为props 兼容codepen 2. 改dropmenus小写",
   "author": "liuyicong",

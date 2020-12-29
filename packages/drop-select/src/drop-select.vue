@@ -33,12 +33,11 @@ export default {
       selectOptions: [], // 下拉选
     };
   },
+  props: {
+    value: [String, Number],
+    defalutItem: [Object],
+  },
   methods: {
-    initData(defalutItem, selectOptions) {
-      console.log(this.$attrs["drop-menus"]);
-      this.curerentItem = defalutItem || this.$attrs["drop-menus"][0];
-      this.selectOptions = selectOptions || [];
-    },
     // 下拉框change
     handleCommand(command) {
       this.curerentItem = this.$attrs["drop-menus"].find(
@@ -50,6 +49,17 @@ export default {
     setSelectOptions(options) {
       this.selectOptions = options;
     },
+  },
+  watch: {
+    selectValue: function (val) {
+      this.$emit("input", val);
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.selectValue = this.value;
+      this.curerentItem = this.defalutItem || this.$attrs["drop-menus"][0];
+    });
   },
 };
 </script>

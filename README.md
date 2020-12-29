@@ -29,6 +29,78 @@ Vue.use(DropSelect);
 
 ## DropSelect
 
+```html
+<template>
+  <div>
+    <h3> 连级 下拉(无初始值) </h3>
+    <drop-select :drop-menus="dropMenus" dropLabelClass="drop-label" placeholder="请选择数据" value-key="value1"
+      label-key="label1" ref="dropInput" @changeDrop="getDropInfo" @change="getValue" type="select" />
+    <h3> 连级 下拉(有初始值) </h3>
+    <drop-select v-model="value" :defalutItem="dropMenus[1]" :drop-menus="dropMenus" dropLabelClass="drop-label" placeholder="请选择数据" value-key="value1"
+      label-key="label1" ref="dropInput1" @changeDrop="getDropInfo" @change="getValue" type="select" />
+    <h3> 连级时间下拉框</h3>
+    <drop-select :drop-menus="dropMenus" ref="dropPicker" dropLabelClass="drop-label" placeholder="请选择数据"
+      type="datepick" />
+  </div>
+
+</template>
+
+<script>
+const DropSelect = ElementExpand.default.DropSelect;
+let dropMenus = [
+        { key: "创建部门所属省区", value: 1, showLable: "创建...属省区" },
+        { key: "任务部门所属省区", value: 2, showLable: "任务...属省区" },
+        { key: "责任部门所属省区", value: 3, showLable: "责任...属省区" },
+      ];
+let dropSelectOptions = [
+    {
+      value1: "选项14",
+      label1: "黄金糕2",
+    },
+    {
+      value1: "选项24",
+      label1: "双皮2",
+    },
+    {
+      value1: "选项34",
+      label1: "蚵仔煎2",
+    }
+];  
+export default {
+  components: {
+    'drop-select':DropSelect
+  },
+  data(){
+     return {
+      value:"选项14",
+      loading: false,
+      showTool: false,
+      tableData: [],
+      dropMenus: dropMenus,
+    };
+  },
+  methods:{
+     getDropInfo(val) {
+      setTimeout(() => {
+        this.$refs.dropInput.setSelectOptions(dropSelectOptions);
+      }, 1000);
+    },
+    getValue(val) {
+      console.log(val);
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$refs.dropInput1.setSelectOptions(dropSelectOptions);
+    });
+  },
+};
+</script>
+
+```
+
+[在线运行](https://codepen.io/liuyicong-git/pen/gOwoedR)
+
 ### DropSelect Attributes
 
 | 参数            | 说明                            | 类型    | 可选值 | 默认值 |
@@ -39,9 +111,17 @@ Vue.use(DropSelect);
 | value-key       | 自定义下拉框选择值对应的属性    | string  |        | value  |
 | label-key       | 自定义下拉框选择label对应的属性 | string  |        | key    |
 
+Events Attributes
+
+| 事件名称         | 说明                      | 回调参数          |
+| ---------------- | ------------------------- | ----------------- |
+| setSelectOptions | 设置type为select  options |                   |
+| changeDrop       | 获取下拉menu的选中值      | dropMenu中选中值  |
+| change           | 下拉框 select 改变        | 选中select 对应值 |
+
 组件下拉悬着是基于ElementUI el-select 二次开发其它属性DropSelect也继承，[请参考el-select](https://element.eleme.io/#/zh-CN/component/select).
 
-//TODO events API
+
 
 ## SearchPop
 
@@ -105,7 +185,7 @@ export default {
 </style>
 ```
 
-[在线运行](https://codepen.io/liuyicong-git/pen/QWKqqMq)
+[在线运行]()
 
 ### SearchPop Attributes 
 

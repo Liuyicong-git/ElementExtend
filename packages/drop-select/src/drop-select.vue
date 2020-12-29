@@ -7,7 +7,7 @@
         <i class="el-icon-caret-bottom  el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item v-for=" item in $attrs.dropMenus" :key="item.key" :command="item.value">{{item.key}}
+        <el-dropdown-item v-for=" item in $attrs['drop-menus']" :key="item.key" :command="item.value">{{item.key}}
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -35,12 +35,13 @@ export default {
   },
   methods: {
     initData(defalutItem, selectOptions) {
-      this.curerentItem = defalutItem || this.$attrs.dropMenus[0];
+      console.log(this.$attrs["drop-menus"]);
+      this.curerentItem = defalutItem || this.$attrs["drop-menus"][0];
       this.selectOptions = selectOptions || [];
     },
     // 下拉框change
     handleCommand(command) {
-      this.curerentItem = this.$attrs.dropMenus.find(
+      this.curerentItem = this.$attrs["drop-menus"].find(
         (val) => val.value === command
       );
       this.$emit("changeDrop", this.curerentItem);

@@ -1,8 +1,8 @@
 {
   "name": "element-expand",
-  "version": "1.0.41",
+  "version": "1.0.51",
   "private": false,
-  "description": "codepen 无法支持大小写修改",
+  "description": "改dropSelect $attrs 为props 兼容codepen",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",

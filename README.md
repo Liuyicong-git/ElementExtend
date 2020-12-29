@@ -33,7 +33,7 @@ Vue.use(DropSelect);
 <template>
   <div>
     <h3> 连级 下拉(无初始值) </h3>
-    <drop-select :drop-menus="dropMenus" dropLabelClass="drop-label" placeholder="请选择数据" value-key="value1"
+    <drop-select :drop-menus="dropMenus" v-model="value1" dropLabelClass="drop-label" placeholder="请选择数据" value-key="value1"
       label-key="label1" ref="dropInput" @changeDrop="getDropInfo" @change="getValue" type="select" />
     <h3> 连级 下拉(有初始值) </h3>
     <drop-select v-model="value" :defalutItem="dropMenus[1]" :drop-menus="dropMenus" dropLabelClass="drop-label" placeholder="请选择数据" value-key="value1"
@@ -73,6 +73,7 @@ export default {
   data(){
      return {
       value:"选项14",
+      value1:"",
       loading: false,
       showTool: false,
       tableData: [],

@@ -1,16 +1,16 @@
 {
   "name": "element-expand",
-  "version": "1.0.56",
+  "version": "1.1.0",
   "private": false,
-  "description": "改dropSelect $attrs 为props 兼容codepen 2. 改dropmenus小写 3 兼容双向绑定流入",
+  "description": "版本加入DragDom 指令",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lib": "vue-cli-service build --target lib --name ElementExpand  --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name ElementExpand  --dest lib src/index.js"
   },
-  "main": "lib/ElementExpand.common.js",
+  "main": "lib/ElementExpand.umd.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Liuyicong-git/ElementExtend"

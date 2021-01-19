@@ -1,12 +1,14 @@
 import DropSelect from "../packages/drop-select";
 import SearchPop from "../packages/search-pop";
-import CardSwiper from "../packages/card-swiper";
+import CollapseTab from "../packages/collapse-tab";
 import DragDom from "./directives/drag";
+import NormalCard from "../packages/normal-card";
 /*  存储组件列表 */
 const components = [
   DropSelect,
   SearchPop,
-  CardSwiper,
+  CollapseTab,
+  NormalCard
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -27,6 +29,6 @@ const install = function (Vue) {
   // 以下是具体的组件列表
   DropSelect,
   SearchPop,
-  CardSwiper,
-  
+  CollapseTab,
+  NormalCard
  }

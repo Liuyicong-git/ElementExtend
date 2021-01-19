@@ -30,6 +30,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
+    "uppercamelcase": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -38,8 +39,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "plugin:vue/essential"
     ],
     "parserOptions": {
       "parser": "babel-eslint"

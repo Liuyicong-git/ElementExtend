@@ -1,14 +1,15 @@
 {
   "name": "element-expand",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "private": false,
-  "description": "版本加入DragDom 指令",
+  "description": "common card 名称更改",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lib": "vue-cli-service build --target lib --name ElementExpand  --dest lib src/index.js"
+    
   },
   "main": "lib/ElementExpand.umd.js",
   "repository": {
@@ -16,22 +17,27 @@
     "url": "https://github.com/Liuyicong-git/ElementExtend"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.14.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "latest",
+    "@babel/preset-env": "latest",
     "@popperjs/core": "^2.6.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "uppercamelcase": "^3.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,

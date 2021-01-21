@@ -5,21 +5,22 @@ const  uppercamelcase = require('uppercamelcase');
 const { version } = require("../../package.json");
 
 const CWD = process.cwd();
-const plugDir = join(CWD , './packages');
-
+const componentDir = join(CWD , './packages');
+const stylesTemplate = `import "./styles/index.scss"; \n`;
+const pluginTemplate = `import "./plugin"; \n`;
 function compileDir(dir){
     const files = readdirSync(dir);
     let componentsName = [];   // 驼峰后所有组件对应名称
-    let importComponentTemplate = ''; // 组件导入模版字符串
+    let importComponentTemplate = ``; // 组件导入模版字符串
     let concatComponentName = '';
     files.forEach( item => {
       let upperComponentsName = uppercamelcase(item);
       componentsName.push(upperComponentsName);
-    //  importComponentTemplate += ` import ${upperComponentsName} from "../packages/${item}" \n`
+      importComponentTemplate += `import ${upperComponentsName} from "../packages/${item}"; \n`
     })
-    importComponentTemplate += `import DragDom from "./directives/drag"`
     concatComponentName = componentsName.join(",\n  ");
     const injectVueTemplate = `
+${stylesTemplate}${pluginTemplate}
 let components = [ ${componentsName} ];
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function (Vue) {
@@ -43,7 +44,9 @@ export default {
 }
 `
 const result = importComponentTemplate + injectVueTemplate + exportComponentStr;
-writeFileSync(join(CWD, './src/index1.js'), result); 
+writeFileSync(join(CWD, './src/index.js'), result); 
 
 }
-compileDir(plugDir)
+
+
+compileDir(componentDir)

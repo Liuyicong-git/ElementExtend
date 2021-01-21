@@ -1,6 +1,11 @@
 <template>
   <div>
-    <copy-board></copy-board>
+    <copy-board text="复制来测试">
+
+      <!-- <template v-slot:append>
+        fdwfsd
+      </template> -->
+    </copy-board>
   </div>
 </template>
 

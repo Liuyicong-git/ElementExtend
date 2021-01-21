@@ -1,15 +1,16 @@
 {
   "name": "element-expand",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "private": false,
-  "description": "common card 名称更改",
+  "description": "采用webpack  迭代",
   "author": "liuyicong",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lib": "vue-cli-service build --target lib --name ElementExpand  --dest lib src/index.js"
-    
+    "lib": "vue-cli-service build --target lib --name ElementExpand  --dest lib src/index.js",
+    "entry": "node build/bin/buildEntry.js",
+    "pack": "npm run entry && webpack --config webpack.common.js --progress "
   },
   "main": "lib/ElementExpand.umd.js",
   "repository": {
@@ -37,7 +38,13 @@
     "sass-loader": "^10.1.0",
     "uppercamelcase": "^3.0.0",
     "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "vue-clipboard2": "^0.3.1",
+    "html-webpack-plugin": "latest",
+    "mini-css-extract-plugin": "^0.9.0",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
   },
   "eslintConfig": {
     "root": true,

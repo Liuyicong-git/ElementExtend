@@ -1,4 +1,4 @@
-import CopyBoard from "./src/copy-board2";
+import CopyBoard from "./src/copy-board";
 
 CopyBoard.install = (vue)=>{
   vue.component(CopyBoard.name , CopyBoard);

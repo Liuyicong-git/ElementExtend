@@ -107,6 +107,31 @@ const commonConfig = {
 }
 
 const conditionConfig = {
-    entry:'./src/index.js',
-    output:''
+    entry: {
+      ElementExpand:'./src/index.js'
+    },
+    output: {
+      path:path.join( CWD , './lib'),
+      filename: '[name].js',
+      chunkFilename: '[id].js',
+      library: 'common',
+      libraryTarget: 'umd',
+      umdNamedDefine: true
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+          'process.env': {
+              NODE_ENV: '"production"'
+          }
+      }),
+      new VueLoaderPlugin(),
+      new webpack.LoaderOptionsPlugin({
+          minimize: true
+      }),
+      new MiniCssExtractPlugin({
+          filename: '[name].css'
+      }),
+      // new webpack.BannerPlugin(new Date().toString() + `v-${version}`),
+  ],
 }
+module.exports = { ...commonConfig , ...conditionConfig };

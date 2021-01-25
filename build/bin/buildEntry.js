@@ -7,7 +7,7 @@ const { version } = require("../../package.json");
 const CWD = process.cwd();
 const componentDir = join(CWD , './packages');
 const stylesTemplate = `import "./styles/index.scss"; \n`;
-const pluginTemplate = `import "./plugin"; \n`;
+const pluginTemplate = `import "./plugin/index.js"; \n`;
 function compileDir(dir){
     const files = readdirSync(dir);
     let componentsName = [];   // 驼峰后所有组件对应名称

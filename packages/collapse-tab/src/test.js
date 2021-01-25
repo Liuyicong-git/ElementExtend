@@ -16,5 +16,5 @@ export default [
     name:'name',
     type:'input',
     showLabel:'活动名称：'
-  }
+  },
 ]

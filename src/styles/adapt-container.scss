@@ -1,0 +1,12 @@
+.adapt-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  &__box {
+    border: 1px solid blue;
+  }
+  .box-auto {
+    flex: 1 1 auto;
+    overflow: scroll;
+  }
+}
